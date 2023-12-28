@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          Login
+        </div>
+        <div class="card-body">
+          <form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="text" class="form-control" id="email" placeholder="Email de acesso" formControlName="email">
+            </div>
+
+            <div class="form-group">
+              <label for="senha">Senha</label>
+              <input type="password" class="form-control" id="senha" placeholder="Senha de acesso" formControlName="senha">
+            </div>
+
+            <div class="mb-2">
+              <div class="d-grid">
+                <button style="margin-top: 10px;" type="submit" class="btn btn-primary">Login</button>
+              </div>
+            </div>
+
+            <div class="mb-2">
+              <div class="d-grid">
+                  <a [routerLink]="['/cadastrar-conta']" class="btn btn-light">
+                      Não possui conta? <strong> Cadastre-se aqui!</strong>
+                  </a>
+              </div>
+          </div>
+            <!-- <button style="margin-top: 10px;" type="submit" class="btn btn-primary">Login</button> -->
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

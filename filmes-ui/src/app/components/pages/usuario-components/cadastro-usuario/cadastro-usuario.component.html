@@ -1,0 +1,53 @@
+<div class="wrapper">
+  <app-header></app-header>
+  <div class="content-wrapper">
+    <!-- Content goes here -->
+
+    <div class="container mt-4">
+      <form class="needs-validation" novalidate [formGroup]="formNewUser" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label for="nome" class="form-label">Nome:</label>
+          <input type="text" id="nome" name="nome" class="form-control" required formControlName="nome">
+          <div class="invalid-feedback">
+            Por favor, informe um nome válido.
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email:</label>
+          <input type="email" id="email" name="email" class="form-control" required formControlName="email">
+          <div class="invalid-feedback">
+            Por favor, informe um email válido.
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="senha" class="form-label">Senha:</label>
+          <input type="password" id="senha" name="senha" class="form-control" required formControlName="senha">
+          <div class="invalid-feedback">
+            Por favor, informe uma senha válida.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="confirma-senha" class="form-label">Confirma Senha:</label>
+          <input type="password" id="senha-confirma" name="confirma-senha" class="form-control" required formControlName="senhaConfirmacao">
+          <div class="invalid-feedback">
+            Por favor, informe uma senha válida.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="roles" class="form-label">Roles:</label>
+          <select id="roles" name="roles" multiple class="form-select" formControlName="roles">
+            <option value="admin">ADMIN</option>
+            <option value="user">USER</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+      </form>
+    </div>
+
+  </div>
+  <app-sidebar></app-sidebar>
+</div>
+
+

@@ -1,0 +1,35 @@
+<div class="wrapper">
+  <app-header></app-header>
+  <div class="content-wrapper">
+    <!-- Content goes here -->
+
+    <div class="container">
+      <div style="margin-top: 10px;" class="navbar-nav ml-auto">
+        <button class="btn btn-success" (click)="cadastrarUsuario()">Adicionar Usuário</button>
+      </div>
+      <h4>Gerenciamento de Usuários</h4>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of listaUsuario">
+            <td>{{ user.nome }}</td>
+            <td>{{ user.email }}</td>
+            <td>
+              <button class="btn btn-primary" style="margin-right: 10px;" (click)="editar(user)">Editar</button>
+              <button class="btn btn-danger" (click)="deletar(user)">Excluir</button>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+  <app-sidebar></app-sidebar>
+</div>

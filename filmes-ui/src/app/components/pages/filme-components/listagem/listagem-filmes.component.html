@@ -1,0 +1,61 @@
+<div class="wrapper">
+  <app-header></app-header>
+  <div class="content-wrapper">
+    <!-- Content goes here -->
+
+    <div class="container">
+
+      <div class="row mb-3">
+        <div class="col-md-6 offset-md-3">
+          <input type="text" class="form-control" placeholder="Pesquisar filmes..."  (input)="searchMovies($event)">
+        </div>
+      </div>
+
+      <div *ngIf="isAdmin()"  class="row mb-3">
+        <div class="col">
+          <button class="btn btn-success" (click)="cadastrar()">Cadastrar Filme</button>
+        </div>
+      </div>
+      <div class="row" *ngIf="filteredMovies.length === 0" >
+        <div class="col-4" *ngFor="let movie of movies">
+          <div class="card mb-3">
+            <img [src]="movie.urlImagem" class="img-thumbnail card-img-top" style="max-width: 300px;" alt="Movie Poster">
+            <div class="card-body">
+              <h5 class="card-title">{{ movie.nome }}</h5>
+              <p class="card-text">{{ movie.descricao }}</p>
+              <button class="btn btn-primary" (click)="detalhar(movie)">Detalhes</button>
+              <button style="margin-left: 10px;" *ngIf="isRoleUser()"   class="btn btn-warning">Votar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- começo -->
+
+  <div class="container mt-4"  *ngIf="filteredMovies.length > 0" >
+    <div class="row">
+      <div class="col-4" *ngFor="let movie of filteredMovies">
+        <div class="card mb-3">
+
+
+          <img [src]="movie.urlImagem" class="card-img-top" alt="Movie Poster">
+          <div class="card-body">
+            <h5 class="card-title">{{ movie.nome }}</h5>
+            <p class="card-text">{{ movie.descricao }}</p>
+            <button class="btn btn-primary" (click)="detalhar(movie)">Detalhes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- fim -->
+
+  </div>
+
+  <app-sidebar></app-sidebar>
+</div>
+
+
+

@@ -1,0 +1,25 @@
+<div class="wrapper">
+  <app-header></app-header>
+  <div class="content-wrapper">
+    <!-- Content goes here -->
+    <form (ngSubmit)="AtualizarUsuario()">
+      <div>
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" [(ngModel)]="userEdit.nome" name="nome" required>
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" [(ngModel)]="userEdit.email" name="email" required>
+      </div>
+      <!-- <div>
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" [(ngModel)]="novoUsuario.senha" name="senha" required>
+      </div> -->
+      <!-- Aqui você pode adicionar campos adicionais, se necessário -->
+      <button type="submit">Atualizar</button>
+    </form>
+  </div>
+  <app-sidebar></app-sidebar>
+</div>
+
+
